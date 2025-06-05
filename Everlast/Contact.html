@@ -441,86 +441,109 @@
 
 
 <!-- Section 4: Contact Form (Enhanced) -->
+<!-- Section 4: Contact Form (Fully Responsive Desktop + Mobile) -->
 <section class="animate-section bounce-in" style="
-  padding: 60px 20px; 
-  background: #f7f7f7; 
+  padding: 60px 15px;
+  background: #f7f7f7;
   font-family: Arial, sans-serif;
 ">
-  <div style="
-    max-width: 700px; 
-    margin: auto; 
-    background: white; 
-    padding: 40px; 
-    border-radius: 20px; 
+  <div class="responsive-contact-box" style="
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-sizing: border-box;
   ">
     <h2 style="
-      color: #8b1a1a; 
-      font-size: 2rem; 
-      margin-bottom: 20px; 
+      color: #8b1a1a;
+      font-size: 2rem;
+      margin-bottom: 25px;
       text-align: center;
     ">
       Send Us a Message
     </h2>
-    <form style="
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
+    <form class="responsive-form" style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
     ">
       <input type="text" placeholder="Your Name" style="
-        padding: 14px; 
-        border: 1px solid #ccc; 
-        border-radius: 10px; 
-        font-size: 1rem; 
+        padding: 14px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
         transition: border-color 0.3s, box-shadow 0.3s;
-      " 
-      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';" 
-      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';" 
+      "
+      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';"
+      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';"
       required>
-      
+
       <input type="email" placeholder="Your Email" style="
-        padding: 14px; 
-        border: 1px solid #ccc; 
-        border-radius: 10px; 
-        font-size: 1rem; 
+        padding: 14px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
         transition: border-color 0.3s, box-shadow 0.3s;
-      " 
-      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';" 
-      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';" 
+      "
+      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';"
+      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';"
       required>
-      
+
       <textarea placeholder="Your Message" style="
-        grid-column: span 2; 
-        padding: 14px; 
-        height: 150px; 
-        border: 1px solid #ccc; 
-        border-radius: 10px; 
-        font-size: 1rem; 
-        resize: vertical; 
+        grid-column: span 2;
+        padding: 14px;
+        height: 150px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+        resize: vertical;
+        width: 100%;
+        box-sizing: border-box;
         transition: border-color 0.3s, box-shadow 0.3s;
-      " 
-      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';" 
-      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';" 
+      "
+      onfocus="this.style.borderColor='#8b1a1a'; this.style.boxShadow='0 0 5px rgba(139,26,26,0.3)';"
+      onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';"
       required></textarea>
-      
+
       <button type="submit" style="
-        grid-column: span 2; 
-        background: #8b1a1a; 
-        color: white; 
-        padding: 14px; 
-        border: none; 
-        border-radius: 50px; 
-        font-size: 1rem; 
-        cursor: pointer; 
+        grid-column: span 2;
+        background: #8b1a1a;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
         transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-      " 
-      onmouseover="this.style.background='#a12222'; this.style.transform='scale(1.05)'; this.style.boxShadow='0 5px 15px rgba(139,26,26,0.3)';" 
+      "
+      onmouseover="this.style.background='#a12222'; this.style.transform='scale(1.03)'; this.style.boxShadow='0 5px 15px rgba(139,26,26,0.3)';"
       onmouseout="this.style.background='#8b1a1a'; this.style.transform='scale(1)'; this.style.boxShadow='none';">
         Submit Message
       </button>
     </form>
   </div>
 </section>
+
+<!-- Viewport Meta Tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Responsive Form Layout -->
+<style>
+  @media screen and (max-width: 768px) {
+    .responsive-form {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
 
 
 
@@ -588,7 +611,7 @@
       <ul style="list-style:none; padding:0; line-height:2;">
         <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
         <li><a href="About.html" style="color:#fff; text-decoration:none;">About Us</a></li>
-        <li><a href="product.html" style="color:#fff; text-decoration:none;">Gallery</a></li>
+        <li><a href="product.html" style="color:#fff; text-decoration:none;">Products</a></li>
         <li><a href="Contact.html" style="color:#fff; text-decoration:none;">Contact US</a></li>
     
       </ul>

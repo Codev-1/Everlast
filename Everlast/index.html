@@ -160,7 +160,7 @@
 
           <li class="sub-dropdown">
             <a href="chamber_cover.html">CHAMBER COVER ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <ul class="sub-dropdown-menu">
               <li><a href="chamber_cover.html">Low Duty</a></li>
               <li><a href="chamber_cover.html">Medium Duty</a></li>
               <li><a href="chamber_cover.html">Heavy Duty</a></li>
@@ -170,7 +170,7 @@
 
           <li class="sub-dropdown">
             <a href="U_Dtrain.html">U-DRAIN ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <ul class="sub-dropdown-menu">
               <li><a href="U_Dtrain.html">300×300×2000mm</a></li>
               <li><a href="U_Dtrain.html">450×450×2000mm</a></li>
             </ul>
@@ -376,6 +376,9 @@
   <!-- ??????????????    Sliding Products ?????????????? -->
    <!-- ??????????????    Sliding Products ?????????????? -->
 
+
+   
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -394,10 +397,10 @@
     width: 100%;
   }
   .slider-track {
-  display: flex;
-  transition: transform 6s ease-in-out;
-  will-change: transform;
-}
+    display: flex;
+    transition: transform 6s ease-in-out;
+    will-change: transform;
+  }
 
   .swiper-slide {
     flex: 0 0 22%;
@@ -477,7 +480,15 @@
   .slider-btn.right {
     right: -50px;
   }
+
+  /* 🔽 Hide slider on screens smaller than 992px */
+  @media (max-width: 991px) {
+    .slider-container {
+      display: none;
+    }
+  }
 </style>
+
 </head>
 <body>
 
@@ -989,10 +1000,12 @@
 <!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
+
 <!-- Section: Quality Paving -->
 <section style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; background:#f5f1ef; padding:60px 20px; width:100%;">
-  <div style="flex:1; min-width:300px; padding:40px;margin-left: 5%;">
-    <h2 style="font-size:3.8rem; color:#8b1a1a; margin-bottom:20px; line-height:1.3; font-weight:700;">
+  <div style="flex:1; min-width:300px; padding:40px;margin-left: -2%;">
+    <h2 style="font-size:3.5rem; color:#8b1a1a; margin-bottom:20px; line-height:1.3; font-weight:700;">
       Quality Paving &<br><span style="color:#000;">Infrastructure Supplies</span>
     </h2>
     <p style="font-size:1rem; color:#555; line-height:1.6; margin-bottom:30px;">
@@ -1006,6 +1019,8 @@
     <img src="image/Paver_Block_Home.jpg"  style="width:100%; height: 300px; max-width:6650px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); transform:scale(0.95); transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1)'" onmouseout="this.style.transform='scale(0.95)'"/>
   </div>
 </section>
+
+
 
 
 </section> 
@@ -1110,7 +1125,7 @@
       <ul style="list-style:none; padding:0; line-height:2;">
         <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
         <li><a href="About.html" style="color:#fff; text-decoration:none;">About Us</a></li>
-        <li><a href="product.html" style="color:#fff; text-decoration:none;">Gallery</a></li>
+        <li><a href="product.html" style="color:#fff; text-decoration:none;">Products</a></li>
         <li><a href="Contact.html" style="color:#fff; text-decoration:none;">Contact US</a></li>
     
       </ul>

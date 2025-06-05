@@ -523,9 +523,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Product Slider Carousel</title>
 <style>
+  .desktop-only {
+    display: block;
+  }
 
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+  }
 
-  
   .slider-container {
     width: 1350px;
     margin: 30px auto;
@@ -537,11 +544,10 @@
     width: 100%;
   }
   .slider-track {
-  display: flex;
-  transition: transform 6s ease-in-out;
-  will-change: transform;
-}
-
+    display: flex;
+    transition: transform 6s ease-in-out;
+    will-change: transform;
+  }
   .swiper-slide {
     flex: 0 0 22%;
     margin: 0 1.5%;
@@ -605,7 +611,6 @@
     border-radius: 80%;
     cursor: pointer;
     font-size: 18px;
-    line-height: px;
     text-align: center;
     user-select: none;
     z-index: 10;
@@ -624,46 +629,22 @@
 </head>
 <body>
 
-<div class="slider-container">
- <h2 style="text-align: center; font-family: Arial, sans-serif; font-size: 28px; color: #333; margin-top: 20px;">Company Images</h2>
-
-  <button class="slider-btn left" id="prevBtn" disabled>&lt;</button>
-  <div class="slider-viewport">
-    <div class="slider-track" id="sliderTrack">
-      <!-- Product slides -->
-      <div class="swiper-slide">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="image/Album1.webp" alt="CONCRETE KERBSTORE" />
-            <div class="overlay">
-              <div class="info"><p>For heavy-duty industrial areas.</p></div>
-            </div>
-          </div>
-        </div>
-       
+<div class="desktop-only">
+  <div class="slider-container">
+    <h2 style="text-align: center; font-family: Arial, sans-serif; font-size: 28px; color: #333; margin-top: 20px;">Company Images</h2>
+    <button class="slider-btn left" id="prevBtn" disabled>&lt;</button>
+    <div class="slider-viewport">
+      <div class="slider-track" id="sliderTrack">
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album1.webp" alt="Image1" /><div class="overlay"><div class="info"><p>For heavy-duty industrial areas.</p></div></div></div></div></div>
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album2.webp" alt="Image2" /><div class="overlay"><div class="info"><p></p></div></div></div></div></div>
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album1.webp" alt="Image3" /><div class="overlay"><div class="info"><p>Durable and strong.</p></div></div></div></div></div>
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album2.webp" alt="Image4" /><div class="overlay"><div class="info"><p>Modern design, easy install.</p></div></div></div></div></div>
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album3.webp" alt="Image5" /><div class="overlay"><div class="info"><p>Perfect for outdoor use.</p></div></div></div></div></div>
+        <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album4.webp" alt="Image6" /><div class="overlay"><div class="info"><p>Long-lasting quality.</p></div></div></div></div></div>
       </div>
-
-      <div class="swiper-slide">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="image/Album2.webp" alt="Rectangular Red Paver Blocks" />
-            <div class="overlay">
-              <div class="info"><p></p></div>
-            </div>
-          </div>
-        </div>
-        <h4 class="product-title"></h4>
-      </div>
-
-      <!-- Additional slides -->
-      <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album1.webp" alt="Rcc Tree Gaurd" /><div class="overlay"><div class="info"><p>Durable and strong.</p></div></div></div></div><h4 class="product-title"></h4></div>
-      <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album2.webp" alt="Rectangular Red Paver Blocks" /><div class="overlay"><div class="info"><p>Modern design, easy install.</p></div></div></div></div><h4 class="product-title"></h4></div>
-      <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album3.webp" alt="red_yellow" /><div class="overlay"><div class="info"><p>Perfect for outdoor use.</p></div></div></div></div><h4 class="product-title"></h4></div>
-      <div class="swiper-slide"><div class="product-card"><div class="product-image"><img src="image/Album4.webp" alt="U Drain" /><div class="overlay"><div class="info"><p>Long-lasting quality.</p></div></div></div></div><h4 class="product-title"></h4></div>
-   
     </div>
+    <button class="slider-btn right" id="nextBtn">&gt;</button>
   </div>
-  <button class="slider-btn right" id="nextBtn">&gt;</button>
 </div>
 
 <script>
@@ -675,7 +656,6 @@
     const slides = track.children;
     const totalSlides = slides.length;
     const slidesPerView = 4;
-
     let currentIndex = 0;
 
     function updateButtons() {
@@ -702,7 +682,6 @@
       slideTo(currentIndex + 1);
     });
 
-    // Auto slide every 3 seconds
     setInterval(() => {
       const nextIndex = currentIndex + 1;
       if (nextIndex > totalSlides - slidesPerView) {
@@ -712,7 +691,6 @@
       }
     }, 3000);
 
-    // Initialize buttons
     updateButtons();
   })();
 </script>
@@ -1191,7 +1169,7 @@
       <ul style="list-style:none; padding:0; line-height:2;">
         <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
         <li><a href="About.html" style="color:#fff; text-decoration:none;">About Us</a></li>
-        <li><a href="product.html" style="color:#fff; text-decoration:none;">Gallery</a></li>
+        <li><a href="product.html" style="color:#fff; text-decoration:none;">Products</a></li>
         <li><a href="Contact.html" style="color:#fff; text-decoration:none;">Contact US</a></li>
     
       </ul>
