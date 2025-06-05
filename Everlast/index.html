@@ -1,4 +1,3 @@
-<!-- brown  #8b1a1a       -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everlast</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-</head>
-
-<body>
-    <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -54,6 +49,12 @@
       text-decoration: none;
     }
 
+    /* Wrap the arrow in a span so we can hide it on mobile */
+    .dropdown-arrow {
+      margin-left: 5px;
+    }
+
+    /* Desktop dropdown menu styles */
     .dropdown-menu,
     .sub-dropdown-menu {
       display: none;
@@ -62,7 +63,7 @@
       left: -98%;
       list-style: none;
       z-index: 1000;
-          background: linear-gradient(to right, #f8fafc, #e2e8f0);
+      background: linear-gradient(to right, #f8fafc, #e2e8f0);
     }
 
     .dropdown:hover .dropdown-menu,
@@ -107,16 +108,15 @@
         width: 100%;
       }
 
-      .dropdown-menu,
-      .sub-dropdown-menu {
-        position: relative;
-        background-color: white;
-        padding-left: 20px;
+      /* Remove dropdown arrow on mobile */
+      .dropdown-arrow {
+        display: none;
       }
 
-      .dropdown:hover .dropdown-menu,
-      .sub-dropdown:hover .sub-dropdown-menu {
-        display: block;
+      /* Hide all dropdown menus on mobile (first-level & sub) */
+      .dropdown-menu,
+      .sub-dropdown-menu {
+        display: none !important;
       }
     }
   </style>
@@ -129,7 +129,7 @@
   </div>
 
   <div class="logo">
-    <a href="index.html"><img src="image/logo2.png" alt="Logo" style="height: 50px;" /></a>
+    <a href="index.html"><img src="image/logo2.png" alt="Logo" /></a>
   </div>
 
   <nav id="mobile-nav">
@@ -137,15 +137,16 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown">
-        <a href="About.html">About Us </a>
+        <a href="About.html">About Us</a>
       </li>
 
       <li class="dropdown">
-        <a href="product.html">Products ▾</a>
+        <!-- Added span for dropdown arrow -->
+        <a href="product.html">Products <span class="dropdown-arrow">▾</span></a>
         <ul class="dropdown-menu">
           <li class="sub-dropdown">
-            <a href="Paver_block.html">PAVER BLOCKS ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <a href="Paver_block.html">PAVER BLOCKS <span class="dropdown-arrow">▸</span></a>
+            <ul class="sub-dropdown-menu">
               <li><a href="Paver_block.html">Rough Finish</a></li>
               <li><a href="Paver_block.html">Matte Finish</a></li>
               <li><a href="Paver_block.html">Rubber Mould Finish</a></li>
@@ -159,7 +160,7 @@
           <li><a href="Concrete_Kerbstone.html">CONCRETE KERBSTORE</a></li>
 
           <li class="sub-dropdown">
-            <a href="chamber_cover.html">CHAMBER COVER ▸</a>
+            <a href="chamber_cover.html">CHAMBER COVER <span class="dropdown-arrow">▸</span></a>
             <ul class="sub-dropdown-menu">
               <li><a href="chamber_cover.html">Low Duty</a></li>
               <li><a href="chamber_cover.html">Medium Duty</a></li>
@@ -169,7 +170,7 @@
           </li>
 
           <li class="sub-dropdown">
-            <a href="U_Dtrain.html">U-DRAIN ▸</a>
+            <a href="U_Dtrain.html">U-DRAIN <span class="dropdown-arrow">▸</span></a>
             <ul class="sub-dropdown-menu">
               <li><a href="U_Dtrain.html">300×300×2000mm</a></li>
               <li><a href="U_Dtrain.html">450×450×2000mm</a></li>
@@ -197,6 +198,10 @@
     nav.classList.toggle("active");
   });
 </script>
+
+</body>
+</html>
+
 
 
 <!-- ?????????????????    Banner Setion ??????????? -->
@@ -1003,9 +1008,10 @@
 
 
 <!-- Section: Quality Paving -->
-<section style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; background:#f5f1ef; padding:60px 20px; width:100%;">
-  <div style="flex:1; min-width:300px; padding:40px;margin-left: -2%;">
-    <h2 style="font-size:3.5rem; color:#8b1a1a; margin-bottom:20px; line-height:1.3; font-weight:700;">
+<!-- Section: Quality Paving -->
+<section style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; background:#f5f1ef; padding:60px 20px; width:100%; box-sizing:border-box;">
+  <div style="flex:1; min-width:280px; padding:20px; box-sizing:border-box; text-align:left;">
+    <h2 style="font-size:3rem; color:#8b1a1a; margin-bottom:20px; line-height:1.3; font-weight:700;">
       Quality Paving &<br><span style="color:#000;">Infrastructure Supplies</span>
     </h2>
     <p style="font-size:1rem; color:#555; line-height:1.6; margin-bottom:30px;">
@@ -1013,13 +1019,35 @@
       our factory-direct products meet every construction need<br />
       with precision and reliability.
     </p>
-    <a href="product.html" style="background:#8b1a1a; color:#fff; padding:12px 25px; border-radius:5px; text-decoration:none; font-weight:600; transition:all 0.3s;">Explore Products</a>
+    <a href="product.html" style="background:#8b1a1a; color:#fff; padding:12px 25px; border-radius:5px; text-decoration:none; font-weight:600; display:inline-block; transition:all 0.3s;">Explore Products</a>
   </div>
-  <div style="flex:1; min-width:300px; padding:20px; text-align:center;">
-    <img src="image/Paver_Block_Home.jpg"  style="width:100%; height: 300px; max-width:6650px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); transform:scale(0.95); transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1)'" onmouseout="this.style.transform='scale(0.95)'"/>
+
+  <div style="flex:1; min-width:280px; padding:20px; box-sizing:border-box; text-align:center;">
+    <img src="image/Paver_Block_Home.jpg" style="width:100%; max-width:600px; height:auto; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); transform:scale(0.95); transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1)'" onmouseout="this.style.transform='scale(0.95)'"/>
   </div>
 </section>
 
+<!-- Responsive Media Query -->
+<style>
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column !important;
+      padding: 40px 15px !important;
+    }
+    section div {
+      text-align: center !important;
+    }
+    section h2 {
+      font-size: 2rem !important;
+    }
+    section p {
+      font-size: 0.95rem !important;
+    }
+    section a {
+      padding: 10px 20px !important;
+    }
+  }
+</style>
 
 
 

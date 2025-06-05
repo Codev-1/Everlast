@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everlast</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-</head>
-
-<body>
-    <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -53,6 +49,12 @@
       text-decoration: none;
     }
 
+    /* Wrap the arrow in a span so we can hide it on mobile */
+    .dropdown-arrow {
+      margin-left: 5px;
+    }
+
+    /* Desktop dropdown menu styles */
     .dropdown-menu,
     .sub-dropdown-menu {
       display: none;
@@ -61,7 +63,7 @@
       left: -98%;
       list-style: none;
       z-index: 1000;
-          background: linear-gradient(to right, #f8fafc, #e2e8f0);
+      background: linear-gradient(to right, #f8fafc, #e2e8f0);
     }
 
     .dropdown:hover .dropdown-menu,
@@ -106,16 +108,15 @@
         width: 100%;
       }
 
-      .dropdown-menu,
-      .sub-dropdown-menu {
-        position: relative;
-        background-color: white;
-        padding-left: 20px;
+      /* Remove dropdown arrow on mobile */
+      .dropdown-arrow {
+        display: none;
       }
 
-      .dropdown:hover .dropdown-menu,
-      .sub-dropdown:hover .sub-dropdown-menu {
-        display: block;
+      /* Hide all dropdown menus on mobile (first-level & sub) */
+      .dropdown-menu,
+      .sub-dropdown-menu {
+        display: none !important;
       }
     }
   </style>
@@ -128,7 +129,7 @@
   </div>
 
   <div class="logo">
-    <a href="index.html"><img src="image/logo2.png" alt="Logo" style="height: 50px;" /></a>
+    <a href="index.html"><img src="image/logo2.png" alt="Logo" /></a>
   </div>
 
   <nav id="mobile-nav">
@@ -136,15 +137,16 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown">
-        <a href="About.html">About Us </a>
+        <a href="About.html">About Us</a>
       </li>
 
       <li class="dropdown">
-        <a href="product.html">Products ▾</a>
+        <!-- Added span for dropdown arrow -->
+        <a href="product.html">Products <span class="dropdown-arrow">▾</span></a>
         <ul class="dropdown-menu">
           <li class="sub-dropdown">
-            <a href="Paver_block.html">PAVER BLOCKS ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <a href="Paver_block.html">PAVER BLOCKS <span class="dropdown-arrow">▸</span></a>
+            <ul class="sub-dropdown-menu">
               <li><a href="Paver_block.html">Rough Finish</a></li>
               <li><a href="Paver_block.html">Matte Finish</a></li>
               <li><a href="Paver_block.html">Rubber Mould Finish</a></li>
@@ -158,8 +160,8 @@
           <li><a href="Concrete_Kerbstone.html">CONCRETE KERBSTORE</a></li>
 
           <li class="sub-dropdown">
-            <a href="chamber_cover.html">CHAMBER COVER ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <a href="chamber_cover.html">CHAMBER COVER <span class="dropdown-arrow">▸</span></a>
+            <ul class="sub-dropdown-menu">
               <li><a href="chamber_cover.html">Low Duty</a></li>
               <li><a href="chamber_cover.html">Medium Duty</a></li>
               <li><a href="chamber_cover.html">Heavy Duty</a></li>
@@ -168,8 +170,8 @@
           </li>
 
           <li class="sub-dropdown">
-            <a href="U_Dtrain.html">U-DRAIN ▸</a>
-            <ul class="sub-dropdown-menu" style="margin-top: -14%;">
+            <a href="U_Dtrain.html">U-DRAIN <span class="dropdown-arrow">▸</span></a>
+            <ul class="sub-dropdown-menu">
               <li><a href="U_Dtrain.html">300×300×2000mm</a></li>
               <li><a href="U_Dtrain.html">450×450×2000mm</a></li>
             </ul>
@@ -196,6 +198,10 @@
     nav.classList.toggle("active");
   });
 </script>
+
+</body>
+</html>
+
 
 
 
